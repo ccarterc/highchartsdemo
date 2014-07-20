@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=yes">
+  <title>highcharts</title>
+  <style>
+  	#dayLineContainer{
+  		margin:auto;
+  		width:580px;
+  	}
+  	.dayLine{
+  		display:inline-block;
+  		margin-left:50px;
+  	}
+  	#buttonContainer{
+  		width:250px;
+  		margin:auto;
+  	}
+  </style>
+</head>
+<body>
+	<div id="chart"></div>
+	<div id="dayLineContainer">
+		<div id="firstDay" class="dayLine">First Day <span></span></div>
+		<div id="currentDay" class="dayLine">Displaying <span></span></div>
+		<div id="lastDay" class="dayLine">Last Day <span></span></div>
+	</div>
+
+	<div id="buttonContainer">
+		<br>
+		<input type="button" id="previousDay" value="Previous Day">
+		<input type="button" id="nextDay" value="Next Day">
+	</div>
+
+	<!-- DEV -->
+	<script src="jquery-1.10.2.min.js"></script>
+	<script src="highcharts.js"></script>
+	<script src="highcharts-more.js"></script>
+
+	<script src="chart.js"></script>
+	<!-- /DEV -->
+
+	<script>
+		$.getJSON('fakeData.json', function(json){
+			dataChart.init(json, 'chart');
+		});
+	</script>
+
+</body>
+</html>
